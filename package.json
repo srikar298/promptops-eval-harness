@@ -1,0 +1,33 @@
+{
+  "name": "promptops-eval-harness",
+  "version": "0.1.0",
+  "description": "Enterprise Prompt-as-Code CI/CD Regression Test Harness",
+  "main": "dist/index.js",
+  "bin": {
+    "promptops": "dist/cli/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server/index.js",
+    "dev": "tsx watch src/server/index.ts",
+    "eval": "tsx src/cli/index.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^0.0.39",
+    "@ai-sdk/google": "^0.0.35",
+    "@ai-sdk/openai": "^0.0.40",
+    "ai": "^3.3.0",
+    "commander": "^12.1.0",
+    "fastify": "^4.28.1",
+    "ioredis": "^5.4.1",
+    "yaml": "^2.4.5",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "vitest": "^1.6.0"
+  }
+}
