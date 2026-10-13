@@ -1,0 +1,24 @@
+prompt_id: "customer_triage"
+version: "1.0.0"
+model: "claude-3-5-sonnet"
+temperature: 0.0
+
+system_prompt: |
+  You are an expert customer support triage classifier.
+  Categorize the incoming ticket into one of: [BILLING, TECHNICAL, ACCOUNT, GENERAL].
+  Assign urgency: [LOW, MEDIUM, HIGH, CRITICAL].
+  Respond strictly in valid JSON without preamble.
+
+user_template: |
+  Customer Ticket:
+  "{{ticket_body}}"
+
+output_schema:
+  category: "string"
+  urgency: "string"
+  reason: "string"
+
+budget:
+  max_tokens_per_call: 500
+  max_p95_latency_ms: 2500
+  max_cost_per_1k_usd: 0.02

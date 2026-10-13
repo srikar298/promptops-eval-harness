@@ -1,29 +1,24 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# Distribution / packaging
-build/
+# Node dependencies
+node_modules/
 dist/
-*.egg-info/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Virtual environments
+# Environment & credentials
 .env
-.venv
-env/
-venv/
+.env.local
 
-# Testing & Cache
-.pytest_cache/
-.coverage
-htmlcov/
-.mypy_cache/
-.ruff_cache/
+# Testing & Coverage
+coverage/
+.nyc_output/
 
-# Local data & databases
-data/
-checkpoints/
+# Cache & Logs
 logs/
-*.sqlite3
-*.db
+*.log
+.cache/
+.DS_Store
+
+# Ignore generated test data but keep golden dataset
+data/*
+!data/golden.jsonl
